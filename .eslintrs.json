@@ -1,0 +1,15 @@
+{
+    "import/no-anonymous-default-export":[
+        2,
+        {
+            "allowArray":true,
+            "allowArrowFunction":true,
+            "allowAnonymousClass":true,
+            "allowAnonymousFunction":true,
+            "allowCallExpression":false,
+            "allowLiteral":true,
+            "allowObject":true
+
+        }
+    ]
+}
