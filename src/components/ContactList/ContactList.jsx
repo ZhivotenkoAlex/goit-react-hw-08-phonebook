@@ -1,10 +1,17 @@
   
 import React from 'react';
 import s from './ContactList.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import * as actions from '../../redux/actions';
+import {getVisibleContacts} from '../../redux/selectors'
+
+function ContactList() {
+  const contacts = useSelector(getVisibleContacts);
+  const dispatch = useDispatch();
+  const onDeleteContact = id => dispatch(actions.deleteContact(id));
 
 
-
-const ContactList = ({ contacts, onDeleteContact }) => (
+return (
   <ul >
     {contacts.map(({ id, name,phone }) => (
       <li className={ s.container} key={id} >
@@ -14,6 +21,6 @@ const ContactList = ({ contacts, onDeleteContact }) => (
       </li>
     ))}
   </ul>
-);
+);}
 
 export default ContactList;

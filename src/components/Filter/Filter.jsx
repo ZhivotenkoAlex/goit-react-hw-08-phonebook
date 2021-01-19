@@ -1,10 +1,21 @@
-import React from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { getFilter } from '../../redux/selectors';
+import * as actions from '../../redux/actions';
 import s from './Filter.module.css';
 
-const Filter = ({ value, onChange }) => (
-    <label className={ s.label}>
-        Name filter <input type="text" value={value} onChange={onChange} />
+export default function Filter() {
+    
+    const value = useSelector(getFilter);
+    const dispatch = useDispatch();
+    const Change = e => dispatch(actions.changeFilter(e.target.value));
+    return (
+     <label className={ s.label}>
+            Name filter
+            <input type="text"
+                value={value}
+                onChange={Change} />
     </label>
-);
+)   
 
-export default Filter;
+}
