@@ -10,4 +10,3 @@ export const getVisibleContacts = (state) => {
         name.toLowerCase().includes(normalizedFilter)
     )
 }
-

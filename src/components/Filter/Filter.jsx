@@ -8,13 +8,13 @@ export default function Filter() {
     
     const value = useSelector(getFilter);
     const dispatch = useDispatch();
-    const Change = e => dispatch(actions.changeFilter(e.target.value));
+    const change = e => dispatch(actions.changeFilter(e.target.value));
     return (
      <label className={ s.label}>
             Name filter
             <input type="text"
                 value={value}
-                onChange={Change} />
+                onChange={change} />
     </label>
 )   
 

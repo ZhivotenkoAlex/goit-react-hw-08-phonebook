@@ -1,8 +1,3 @@
-// import { useRef } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import useLocalStorage from '../src/hooks/useLocalStorage';
-
-// import shortid from 'shortid';
 
 import ContactList from './components/ContactList';
 import NameForm from './components/NameForm/NameForm';
@@ -14,19 +9,7 @@ import './App.css';
 export default function App() {
   
 
-  // function addContact({ name, phone }) {
-  //   const contact = {
-  //       id: shortid.generate(),
-  //       name,
-  //       phone
-  //     }
-  
-  //   contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase()) ||
-  //   contacts.find(contact => contact.phone.toLowerCase() === phone.toLowerCase())   
-  //     ? alert(`${name} or ${phone} is already added.`) 
-  //     : setContacts(prevContacts =>[contact, ...prevContacts]); 
-   
-  // };
+
     
     return (
        <Container>
