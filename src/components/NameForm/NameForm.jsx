@@ -46,6 +46,9 @@ export default function Nameform() {
         else if (checkRepeatPhone(phone)) {
             alert(`${phone} is already added.`)
         }
+        else if (name.trim() === '' || phone.trim() === '') {
+            alert('All of inputs must be not empty')
+            }
         else {
             dispatch(addContact(name,phone));
         }
