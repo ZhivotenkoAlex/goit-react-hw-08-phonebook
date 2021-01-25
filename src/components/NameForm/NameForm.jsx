@@ -32,7 +32,7 @@ export default function Nameform() {
     }
 
     const checkRepeatName = name => {
-        return contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())
+        return contacts.find(contact =>contact.name&& contact.name.toLowerCase() === name.toLowerCase())
     };  
 
     const checkRepeatPhone = phone => { return contacts.find(contact => contact.phone === phone) };
