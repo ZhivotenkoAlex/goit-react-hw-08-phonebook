@@ -27,6 +27,17 @@ export const deleteContact = contactId => dispatch => {
 
     axios
         .delete(`./Contacts'/${contactId}`)
-        .then(dispatch(actions.deleteContactSuccess(contactId)))
+        .then(() =>
+            dispatch(actions.deleteContactSuccess(contactId)))
         .catch(error => dispatch(actions.deleteContactError(error)));
-}
+};
+
+export const fetchContacts = () => dispatch => {
+  dispatch(actions.fetchContactRequest());
+
+  axios
+    .get('/Contactlist')
+      .then(({ data }) =>
+          dispatch(actions.fetchContactSuccess(data)))
+    .catch(error => dispatch(actions.fetchContactError(error)));
+};

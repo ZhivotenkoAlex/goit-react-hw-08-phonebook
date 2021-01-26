@@ -8,7 +8,6 @@ import s from './NameForm.module.css';
 export default function Nameform() {
     const contacts = useSelector(getContacts);
     const dispatch = useDispatch();
-    // const onSubmit = ({ name, number }) => dispatch(actions.addContact(name, number));
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
 
@@ -29,6 +28,8 @@ export default function Nameform() {
     const resetinput = () => {
         setName('');
         setPhone('');
+
+
     }
 
     const checkRepeatName = name => {
@@ -53,6 +54,8 @@ export default function Nameform() {
             dispatch(addContact(name,phone));
         }
         resetinput();
+
+        
     };
     
     const nameInputId = shortid.generate();
