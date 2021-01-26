@@ -2,7 +2,7 @@ import { useState} from 'react';
 import shortid from 'shortid';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from '../../redux/selectors';
-import {addContact} from '../../redux/actions';
+import {addContact} from '../../redux/operations';
 import s from './NameForm.module.css';
 
 export default function Nameform() {

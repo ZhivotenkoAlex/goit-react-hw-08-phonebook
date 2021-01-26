@@ -1,8 +1,8 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import {
-  persistStore,
-  persistReducer,
+  // persistStore,
+  // persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -10,7 +10,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+// import storage from 'redux-persist/lib/storage';
 import reducers from './reducers';
 
 const middleware = [
@@ -22,18 +22,20 @@ const middleware = [
   logger,
 ];
 
-const phonebookPersistConfig = {
-  key: 'contacts',
-  storage,
-  blacklist: ['filter'],
-};
+// const phonebookPersistConfig = {
+//   key: 'contacts',
+//   storage,
+//   blacklist: ['filter'],
+// };
+
+// 1. удаляется конфигурация персиста
 
 export const store = configureStore({
   reducer: {
-    contacts: persistReducer(phonebookPersistConfig, reducers),
+    contacts: /*persistReducer(phonebookPersistConfig,*/ reducers,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',
 });
 
-export const persistor = persistStore(store);
+// export const persistor = persistStore(store);

@@ -2,7 +2,7 @@
 import React from 'react';
 import s from './ContactList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import * as actions from '../../redux/actions';
+import * as actions from '../../redux/operations';
 import {getVisibleContacts} from '../../redux/selectors'
 
 function ContactList() {
