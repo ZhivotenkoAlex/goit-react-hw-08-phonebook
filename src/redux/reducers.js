@@ -39,18 +39,18 @@ const filter = createReducer('', {
     [changeFilter]: (state, { payload }) => payload,
 });
 
-// const error = createReducer(null, {
-//     [fetchContactError]: (_, action) => action.payload,
-//     [fetchContactRequest]: () => null,
-//     [addContactRequest]:() => null,
-//     [deleteContactRequest]:() => null,
-//     [deleteContactError]: (_, action) => action.payload,
-//     [addContactError]: (_, action) => action.payload,
-// });
+const error = createReducer(null, {
+    [fetchContactError]: (_, action) => action.payload,
+    [fetchContactRequest]: () => null,
+    [addContactRequest]:() => null,
+    [deleteContactRequest]:() => null,
+    [deleteContactError]: (_, action) => action.payload,
+    [addContactError]: (_, action) => action.payload,
+});
 
 export default combineReducers({
   items,
   filter,
   loading,
-//error
+error
 });
