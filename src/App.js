@@ -1,23 +1,58 @@
 
-import ContactList from './components/ContactList';
-import NameForm from './components/NameForm/NameForm';
-import Filter from './components/Filter';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Container from './components/Container';
+import PhonebookView from './views/PhonebookView';
+import HomeView from './views/HomeView';
+import LoginView from './views/LoginView';
+import RegisterView from './views/RegisterView';
+import AppBar from './components/AppBar';
+import { authOperations, authSelectors } from './redux/auth';
+import { Switch } from 'react-router-dom';
+import PrivatRoute from "./components/PrivatRoute";
+import PublicRoute from "./components/PublicRoute";
 
 import './App.css';
 
 export default function App() {
-  
-    return (
-       <Container>
-       <h1 className="title"> Phonebook </h1>
-       <h2 className="subtitle">Add new contact</h2>
-       <NameForm  />
-       <h2 className="subtitle">Find contact</h2>
-       <Filter />
-       <h2 className="subtitle">Contact list</h2>
-       <ContactList />
-       </Container>
+const dispatch = useDispatch();
+const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
+
+  useEffect(
+    () => {
+      dispatch(authOperations.fetchCurrentUser());
+    }, [dispatch]
+  );
+
+  return (
+    !isFetchingCurrentUser && (
+      <Container>
+        <AppBar />
+        
+        <Switch>
+           
+          <PublicRoute exact path="/">
+            <HomeView />
+          </PublicRoute>
+
+          <PublicRoute exact path="/register" restricted>
+            <RegisterView />
+          </PublicRoute>
+
+          <PublicRoute exact path="/login" restricted>
+            <LoginView />
+          </PublicRoute>
+
+
+          <PrivatRoute >
+            <PhonebookView path="/contacts" />
+          </PrivatRoute>
+
+        </Switch>
+      </Container>
+
     )
-}
+  );
+  
+    }
 

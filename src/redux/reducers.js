@@ -31,12 +31,12 @@ const loading = createReducer(
     [addContactError]: () => false,
     [deleteContactRequest]: () => true,
     [deleteContactSuccess]: () => false,
-    [deleteContactError]: () => false,
+    [deleteContactError]: () => false,  
 }
 );
 
 const filter = createReducer('', {
-    [changeFilter]: (state, { payload }) => payload,
+    [changeFilter]: (_, { payload }) => payload,
 });
 
 const error = createReducer(null, {

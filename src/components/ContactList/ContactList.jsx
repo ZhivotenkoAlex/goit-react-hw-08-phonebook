@@ -18,25 +18,14 @@ function ContactList() {
     dispatch(operations.fetchContacts());
   }, [dispatch]);
 
-  //   return (
-  //  <ul >
-  //           {contacts.map(({ id, name, phone }) => (
-  //               <li className={ s.container} key={id} >
-  //               <p className={ s.name}>{name}</p>
-  //               <p className={ s.name}>{phone}</p>
-  //               <button className={ s.button} type="button" onClick={() => onDeleteContact(id)}>Удалить</button>
-  //             </li>
-  //           ))}
-  //         </ul>
-  //   );
-  
+
   if (contacts.length > 0 && !error) {
     return (
       <ul >
-        {contacts.map(({ id, name, phone }) => (
+        {contacts.map(({ id, name, number }) => (
           <li className={s.container} key={id} >
             <p className={s.name}>{name}</p>
-            <p className={s.name}>{phone}</p>
+            <p className={s.name}>{number}</p>
             <button className={s.button} type="button" onClick={() => onDeleteContact(id)}>Удалить</button>
           </li>
         ))}
@@ -46,7 +35,7 @@ function ContactList() {
     return (
       <div>
         <Loader />
-        <p>Ну давай подожем!</p>
+        <p>Пусто тут!</p>
       </div>
     )
   }

@@ -9,7 +9,7 @@ export default function Nameform() {
     const contacts = useSelector(getContacts);
     const dispatch = useDispatch();
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
+    const [number, setPhone] = useState('');
 
       const handleChange = event => {
         const { name, value } = event.currentTarget;
@@ -18,7 +18,7 @@ export default function Nameform() {
             case 'name':
                 setName(value);
                 break;
-            case 'phone':
+            case 'number':
                 setPhone(value);
                 break;
             default: return;
@@ -36,7 +36,7 @@ export default function Nameform() {
         return contacts.find(contact =>contact.name&& contact.name.toLowerCase() === name.toLowerCase())
     };  
 
-    const checkRepeatPhone = phone => { return contacts.find(contact => contact.phone === phone) };
+    const checkRepeatPhone = number => { return contacts.find(contact => contact.number === number) };
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -44,14 +44,14 @@ export default function Nameform() {
         if (checkRepeatName(name)) {
          alert(`${name} is already added.`)
         }
-        else if (checkRepeatPhone(phone)) {
-            alert(`${phone} is already added.`)
+        else if (checkRepeatPhone(number)) {
+            alert(`${number} is already added.`)
         }
-        else if (name.trim() === '' || phone.trim() === '') {
+        else if (name.trim() === '' || number.trim() === '') {
             alert('All of inputs must be not empty')
             }
         else {
-            dispatch(addContact(name,phone));
+            dispatch(addContact(name,number));
         }
         resetinput();
 
@@ -79,8 +79,8 @@ export default function Nameform() {
                         Phone
                              <input
                             type="text"
-                            name='phone'
-                            value={phone}
+                            name='number'
+                            value={number}
                             onChange={handleChange}
                             id={phoneInputId}
                         />
