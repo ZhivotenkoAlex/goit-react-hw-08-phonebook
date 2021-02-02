@@ -1,6 +1,5 @@
 {
-  "name": "goit-react-hw-07-phonebook",
-  "homepage": "https://zhivotenkoalex.github.io/goit-react-hw-07-phonebook",
+  "name": "phonebook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -40,9 +39,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "server": "json-server --delay 500 --port 4000 --watch db.json "
-  },
+    "deploy":  "netlify deploy -p"
+      },
   "eslintConfig": {
     "extends": [
       "react-app",
