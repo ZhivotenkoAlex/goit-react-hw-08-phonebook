@@ -11,6 +11,17 @@ const styles = {
     flexDirection: 'column',
     marginBottom: 15,
   },
+   section: {
+    border: ' 2px solid white',
+    padding:30,
+  },
+   button: {
+    fontSize: 15,
+    fontWeight: 700,
+    borderRadius: 10,
+    padding: 10,
+    background: 'white',
+  }
 };
 
 export default function RegisterView() {
@@ -41,7 +52,7 @@ export default function RegisterView() {
   };
 
   return (
-    <div>
+    <div style={styles.section}>
       <h1>Create account</h1>
 
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="on">
@@ -70,7 +81,7 @@ export default function RegisterView() {
           />
         </label>
 
-        <button type="submit">Sign up</button>
+        <button type="submit" style={styles.button}>Sign up</button>
       </form>
     </div>
   );

@@ -85,11 +85,11 @@ export default function Nameform() {
                             id={phoneInputId}
                         />
                     </label>
-                        
-
-                    <button className={s.button} type='submit'>Add contact</button>
-
+                    <div>
+                        <button className={s.button} type='submit'>Add contact</button>
+                        </div>
                 </div>
+              
             </form>
         </>
     );

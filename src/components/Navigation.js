@@ -5,14 +5,18 @@ import authSelectors from '../redux/auth/auth-selectors';
 
 const styles = {
   link: {
+    fontSize:'20px',
     display: 'inline-block',
     textDecoration: 'none',
+    marginLeft:25,
     padding: 12,
     fontWeight: 700,
     color: '#2A363B',
+    textShadow: '4px 4px 15px rgba(255,255,255,1)',
   },
   activeLink: {
     color: '#E84A5F',
+    
   },
 };
 

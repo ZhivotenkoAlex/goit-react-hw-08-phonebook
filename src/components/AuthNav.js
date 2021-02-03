@@ -6,6 +6,8 @@ const styles = {
     display: 'inline-block',
     textDecoration: 'none',
     padding: 12,
+    marginRight: 20,
+    fontSize:20,
     fontWeight: 700,
     color: '#2A363B',
   },

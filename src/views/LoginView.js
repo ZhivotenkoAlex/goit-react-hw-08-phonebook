@@ -11,6 +11,17 @@ const styles = {
     flexDirection: 'column',
     marginBottom: 15,
   },
+  section: {
+    border: ' 2px solid white',
+    padding:30,
+  },
+  button: {
+    fontSize: 15,
+    fontWeight: 700,
+    borderRadius: 10,
+    padding: 10,
+    background: 'white',
+  }
 };
 
 export default function LoginView() {
@@ -37,7 +48,7 @@ export default function LoginView() {
   };
 
   return (
-    <div>
+    <div style={styles.section}>
       <h1>Log in</h1>
 
       <form onSubmit={handleSubmit} style={styles.form} autoComplete="on">
@@ -61,7 +72,7 @@ export default function LoginView() {
           />
         </label>
 
-        <button type="submit">Log in</button>
+        <button type="submit" style={styles.button}>Log in</button>
       </form>
     </div>
   );

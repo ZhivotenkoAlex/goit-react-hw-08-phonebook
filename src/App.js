@@ -26,8 +26,11 @@ const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
 
   return (
     !isFetchingCurrentUser && (
+      <>
+      <AppBar />
       <Container>
-        <AppBar />
+        
+        
         
         <Switch>
            
@@ -50,7 +53,7 @@ const isFetchingCurrentUser = useSelector(authSelectors.getIsFetchingCurrent);
 
         </Switch>
       </Container>
-
+</>
     )
   );
   

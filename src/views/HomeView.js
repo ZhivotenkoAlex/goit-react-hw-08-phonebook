@@ -17,11 +17,9 @@ const styles = {
 const HomeView = () => (
   <div style={styles.container}>
     <h1 style={styles.title}>
-      Welcome to Global Phonebook!{' '}
-      <span role="img" aria-label="Иконка приветствия">
-        💁‍♀️
-      </span>
-    </h1>
+      <p>Welcome to Global Phonebook!</p>
+      <p>The best way to save your phone contacts!</p>
+      </h1>
   </div>
 );
 

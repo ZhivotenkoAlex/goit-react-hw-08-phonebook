@@ -26,7 +26,7 @@ function ContactList() {
           <li className={s.container} key={id} >
             <p className={s.name}>{name}</p>
             <p className={s.name}>{number}</p>
-            <button className={s.button} type="button" onClick={() => onDeleteContact(id)}>Удалить</button>
+            <button className={s.button} type="button" onClick={() => onDeleteContact(id)}>Delete</button>
           </li>
         ))}
       </ul>)
@@ -53,27 +53,5 @@ function ContactList() {
     )
   }
 }
-//   return (
-//     <>
-      
-//       {contacts.length > 0 && !error ? (
-//         <ul >
-//           {contacts.map(({ id, name, phone }) => (
-//               <li className={ s.container} key={id} >
-//               <p className={ s.name}>{name}</p>
-//               <p className={ s.name}>{phone}</p>
-//               <button className={ s.button} type="button" onClick={() => onDeleteContact(id)}>Удалить</button>
-//             </li>
-//           ))}
-//         </ul>) :
-//         (<div>
-//           {error && <h2>{error.message}</h2>}
-//           <p>Че смотришь? Пиши контакты!</p>
-//         </div>)
-  
-//       }
-//     </>
-//   );
-// }
 
 export default ContactList;

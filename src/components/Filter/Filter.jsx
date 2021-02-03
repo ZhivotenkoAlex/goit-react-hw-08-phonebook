@@ -11,7 +11,7 @@ export default function Filter() {
     const change = e => dispatch(actions.changeFilter(e.target.value));
     return (
      <label className={ s.label}>
-            Name filter
+           Enter a name
             <input type="text"
                 value={value}
                 onChange={change} />
